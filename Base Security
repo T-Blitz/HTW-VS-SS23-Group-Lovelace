@@ -1,0 +1,31 @@
+@Configuration
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .requiresChannel()
+            .anyRequest()
+            .requiresSecure();
+    }
+
+    @Bean
+    public TomcatServletWebServerFactory servletContainer() {
+        TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory();
+        tomcat.addAdditionalTomcatConnectors(createSslConnector());
+        return tomcat;
+    }
+
+    private Connector createSslConnector() {
+        Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
+        Http11NioProtocol protocol = (Http11NioProtocol) connector.getProtocolHandler();
+        connector.setScheme("https");
+        connector.setSecure(true);
+        connector.setPort(8443); // Specify the HTTPS port
+        protocol.setSSLEnabled(true);
+        protocol.setKeystoreFile("/path/to/your/keystore.p12"); // Path to your keystore file
+        protocol.setKeystorePass("your_keystore_password"); // Keystore password
+        protocol.setKeyAlias("your_certificate_alias"); // Alias of the certificate in the keystore
+        return connector;
+    }
+}
