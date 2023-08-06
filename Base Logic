@@ -1,0 +1,39 @@
+// Board.java (Game logic)
+public class Board {
+    // Implement the game logic and board representation here
+}
+
+// GameController.java (Spring Boot controller)
+@RestController
+@RequestMapping("/api/game")
+public class GameController {
+    private Board board = new Board();
+
+    @PostMapping("/start")
+    public ResponseEntity<String> startGame() {
+        board.reset(); // Initialize or reset the board for a new game
+        return ResponseEntity.ok("Game started!");
+    }
+
+    @PostMapping("/move/{row}/{col}")
+    public ResponseEntity<String> makeMove(@PathVariable int row, @PathVariable int col) {
+        if (board.makeMove(row, col)) {
+            // Move successful, check for win/draw
+            if (board.checkWin()) {
+                return ResponseEntity.ok("Player " + board.getCurrentPlayer() + " wins!");
+            } else if (board.checkDraw()) {
+                return ResponseEntity.ok("It's a draw!");
+            } else {
+                return ResponseEntity.ok("Move successful!");
+            }
+        } else {
+            // Invalid move
+            return ResponseEntity.badRequest().body("Invalid move!");
+        }
+    }
+
+    @GetMapping("/board")
+    public ResponseEntity<String> getBoardState() {
+        return ResponseEntity.ok(board.getBoardState());
+    }
+}
