@@ -14,7 +14,7 @@ Exam-Project for "Verteilte Systeme" - Summer Semester 2023 HTW-Saar - Group Lov
 - MySQL​
 - Remote Method Invocation? 
 
-### IDE's ​
+### IDE's:
 - IntelliJ ​
 - Eclipse​
 - Editor
