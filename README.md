@@ -20,7 +20,7 @@ Exam-Project for "Verteilte Systeme" - Summer Semester 2023 HTW-Saar - Group Lov
 - Editor
 
 ### Codebase​:
--Github
+- Github
 
 ### Team-Management und communication
 Jeden Sonntag 20 Uhr regelmäßiges Treffen auf Discord
