@@ -1,12 +1,8 @@
 import java.awt.*;
-import java.awt.font.GlyphVector;
 import java.awt.font.TextLayout;
 import java.awt.geom.*;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.swing.*;
 
@@ -19,7 +15,7 @@ public class GameInterface extends JComponent {
     public GameInterface(int w, int h) {
         width = w;
         height = h;
-        gameAni = new game();
+        gameAni = new game(width, height);
     }
 
     protected void paintComponent(Graphics g) {
