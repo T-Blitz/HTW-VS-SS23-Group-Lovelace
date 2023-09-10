@@ -1,0 +1,4 @@
+Board file is the main file
+To run the all the file need to run the board.java
+gameInterface.java is the GUI file for the board file
+game.java is the game layout file
