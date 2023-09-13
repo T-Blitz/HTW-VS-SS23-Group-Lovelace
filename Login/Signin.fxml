@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.SigninController">
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="228.0" style="-fx-background-color: F49A19;" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <AnchorPane prefHeight="400.0" prefWidth="332.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="36.0" layoutY="65.0" text="Username" />
+            <TextField fx:id="enterUsernameField" layoutX="106.0" layoutY="61.0" promptText="Username" />
+            <Label layoutX="38.0" layoutY="103.0" text="Password" />
+            <TextField fx:id="enterPasswordField" layoutX="106.0" layoutY="99.0" promptText="Password" />
+            <Button fx:id="loginButton" layoutX="36.0" layoutY="163.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="220.0" style="-fx-background-color: F49A19;" text="Sign in" />
+            <Button fx:id="signinButton" layoutX="203.0" layoutY="341.0" mnemonicParsing="false" style="-fx-background-color: F49A19;" text="Cancel" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
