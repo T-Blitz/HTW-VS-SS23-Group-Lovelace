@@ -112,9 +112,10 @@ class optionbtn extends JButton implements ActionListener {
     private Color hoverBackgroundColor;
     JButton logo;
     Font mansalva;
+    JFrame sc;
 
     public optionbtn(String Loc, int x, int y, int width, int height, String name, Color design, Color design1,
-            Color design2) {
+            Color design2, JFrame scn) {
         loc = Loc;
         locX = x;
         locY = y;
@@ -125,6 +126,7 @@ class optionbtn extends JButton implements ActionListener {
         txtcolor = design1;
         pressedBackgroundColor = design2;
         hoverBackgroundColor = design2;
+        sc = scn;
         try {
             mansalva = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("fonts/Mansalva-Regular.ttf"));
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -157,7 +159,13 @@ class optionbtn extends JButton implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println(e.getID());
+        if (id.equals("Offline")) {
+            sc.dispose();
+            offline v = new offline();
+        } else if (id.equals("Human")) {
+            sc.dispose();
+            human v = new human();
+        }
         // logo.setText("Roseindia.net");
     }
 
@@ -166,12 +174,12 @@ class optionbtn extends JButton implements ActionListener {
 class launchpage {
     public JFrame sc;
     buttonImage sett1 = new buttonImage();
-    optionbtn mainbtn = new optionbtn("Offline", 90, 600, 210, 40, "Offline", new Color(253, 18, 18),
-            new Color(0, 0, 0), new Color(244, 56, 56));
-    optionbtn online = new optionbtn("Online", 90, 680, 210, 40, "Offline", new Color(51, 253, 18),
-            new Color(0, 0, 0), new Color(244, 56, 56));
 
     public launchpage(JFrame scn, int width, int height) {
+        optionbtn mainbtn = new optionbtn("Offline", 90, 600, 210, 40, "Offline", new Color(253, 18, 18),
+                new Color(0, 0, 0), new Color(244, 56, 56), scn);
+        optionbtn online = new optionbtn("Online", 90, 680, 210, 40, "Online", new Color(51, 253, 18),
+                new Color(0, 0, 0), new Color(244, 56, 56), scn);
         scn.add(sett1.buttonImage("image/setting.png", width - 60, 5, 40, 40, "Setting"));
         scn.add(sett1.buttonImage("image/XO.png", width / 2 - 20, height - 55, 40, 40, "Home"));
         scn.add(sett1.buttonImage("image/history.png", 10, height - 55, 40, 40, "history"));
@@ -183,7 +191,8 @@ class launchpage {
 }
 
 class gameanimation {
-    private static Object obj = new Object();   
+    private static Object obj = new Object();
+
     public gameanimation(JFrame scr) {
         HashMap<Integer, Integer[]> prices = new HashMap<Integer, Integer[]>();
         int[][] animation = { { 1, 9, 7, 4, 3, 2, 5 }, { 9, 1, 8, 7, 6, 4 }, { 1, 5, 7, 4, 6, 3, 8, 9, 2 } };
@@ -201,7 +210,7 @@ class gameanimation {
         for (int j = 0; j < 1; j++) {
             int count = 0;
             for (int i = 0; i < animation[j].length; i++) {
-                 
+
                 JButton b = new JButton((count % 2 == 0) ? "X" : "O");
                 arr.add(b);
                 b.setFont(new Font("Dialog", Font.BOLD, 70));
@@ -218,7 +227,7 @@ class gameanimation {
                 scr.add(b);
                 count++;
             }
-            //scr.getContentPane().remove(((JComponent) arr.get(0)));
+            // scr.getContentPane().remove(((JComponent) arr.get(0)));
         }
 
     }
@@ -238,7 +247,7 @@ public class Board {
         screen.setTitle("Tic tac toe");
         screen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         screen.setVisible(true);
-        
+
     }
 
 }
