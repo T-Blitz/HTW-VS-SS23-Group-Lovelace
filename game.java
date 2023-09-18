@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.geom.*;
 import javax.swing.*;
 
-public class  game {
+public class game {
     private int width;
     private int height;
 
@@ -21,7 +21,6 @@ public class  game {
         gh2.fill(line2);
         RoundRectangle2D.Double line3 = new RoundRectangle2D.Double(width / 2 - 125, 380 + 83, 250, 6, 10, 10);
         gh2.fill(line3);
-        
 
     }
 }
