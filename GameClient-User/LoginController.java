@@ -50,5 +50,24 @@ public class LoginController {
     }
 
     public void validateLogin() {
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        String verifyLogin = "SELECT count(1) FROM user Where username = '" + usernameTextfield.getText() + "' AND password = '" + passwordTextfield + "'";
+
+        try{
+            Statement statement = connectDB.createStatement();
+            ResultSet queryResult = statement.executeQuery(verifyLogin);
+
+            while(queryResult.next()) {
+                if (queryResult.getInt(1) == 1) {
+                    loginMessageLabel.setText("Welcome");
+                }else {
+                    loginMessageLabel.setText("Invalid Login");
+                }
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
