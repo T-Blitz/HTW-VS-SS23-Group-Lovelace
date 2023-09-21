@@ -11,6 +11,10 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class LoginController {
     @FXML
@@ -39,5 +43,12 @@ public class LoginController {
 
         signupStage.setScene(signupScene);
         signupStage.show();
+    }
+
+    public void loginButtonOnAction(ActionEvent event) {
+        validateLogin();
+    }
+
+    public void validateLogin() {
     }
 }
