@@ -30,5 +30,14 @@ public class LoginController {
         loginStage.close();
     }
 
+    public void signupButtonOnAction(ActionEvent event) throws IOException{
 
+        Parent signupParent = FXMLLoader.load(getClass().getResource("signup.fxml"));
+        Scene signupScene = new Scene(signupParent);
+
+        Stage signupStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        signupStage.setScene(signupScene);
+        signupStage.show();
+    }
 }
