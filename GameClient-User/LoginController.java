@@ -25,4 +25,8 @@ public class LoginController {
     @FXML
     private Label loginMessageLabel;
 
+    public void cancelButtonOnAction(ActionEvent event) {
+        Stage loginStage = (Stage) cancelButton.getScene().getWindow();
+        loginStage.close();
+    }
 }
