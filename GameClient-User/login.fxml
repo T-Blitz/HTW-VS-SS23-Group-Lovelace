@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LoginController">
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: #FF8C00;" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: #E0EEE0;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="signupButton" layoutX="300.0" layoutY="350.0" mnemonicParsing="false" onAction="#signupButtonOnAction" text="Sign up" />
+            <Label layoutX="140.0" layoutY="354.0" text="You can register here for free" />
+            <Button fx:id="loginButton" layoutX="20.0" layoutY="160.0" mnemonicParsing="false" onAction="#loginButtonOnAction" text="Login" />
+            <TextField fx:id="usernameTextfield" layoutX="20.0" layoutY="80.0" promptText="Username" />
+            <TextField fx:id="passwordTextfield" layoutX="20.0" layoutY="120.0" promptText="Password" />
+            <Label fx:id="loginMessageLabel" layoutX="80.0" layoutY="163.0" prefHeight="18.0" prefWidth="177.0" textFill="RED" />
+            <Button fx:id="cancelButton" layoutX="20.0" layoutY="200.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" text="Cancel" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
