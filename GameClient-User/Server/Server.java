@@ -1,5 +1,4 @@
-//import RMI;
-//import DatabaseConnection;
+package Server;
 
 public class Server {
     public static void main(String[] args) {
@@ -11,7 +10,7 @@ public class Server {
     private void start(String[] args) {
         //localhost
         //Datenbank Verbindung
-        //Start Server RMI
+        //Start Server.Server Server.RMI
 
     }
 }
