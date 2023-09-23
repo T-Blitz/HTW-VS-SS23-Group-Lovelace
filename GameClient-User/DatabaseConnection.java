@@ -21,4 +21,10 @@ public class DatabaseConnection {
 
         return databaseLink;
     }
+
+    public void addUser(String username, String password) {
+        //User hinzufuegen
+    }
+
+
 }
