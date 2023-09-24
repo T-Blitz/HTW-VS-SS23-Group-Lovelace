@@ -41,6 +41,8 @@ public class SignupController {
                 enterPasswordField.getText().isBlank()) {
 
             signupMessageLabel.setText("Please fill all text fields");
+        } else  {
+            signupUser();
         }
     }
 
