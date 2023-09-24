@@ -11,6 +11,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class SignupController {
     @FXML
@@ -52,5 +54,14 @@ public class SignupController {
         String insertText = "INSERT INTO user(username, password) VALUES ('";
         String insertData = username + "','" + password + "')";
         String insertSQL = insertText + insertData;
+
+        try{
+            Statement statement = connectDB.createStatement();
+            statement.executeUpdate(insertSQL);
+            signupMessageLabel.setText("Successfull Sign up");
+        }catch (SQLException e) {
+            e.printStackTrace();
+            e.getCause();
+        }
     }
 }
