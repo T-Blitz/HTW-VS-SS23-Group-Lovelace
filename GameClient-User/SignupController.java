@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 public class SignupController {
     @FXML
@@ -39,4 +40,17 @@ public class SignupController {
 
             signupMessageLabel.setText("Please fill all text fields");
         }
+    }
+
+    public void signupUser() {
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        String username = enterUsernameField.getText();
+        String password = enterPasswordField.getText();
+
+        String insertText = "INSERT INTO user(username, password) VALUES ('";
+        String insertData = username + "','" + password + "')";
+        String insertSQL = insertText + insertData;
+    }
 }
