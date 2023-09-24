@@ -31,4 +31,12 @@ public class SignupController {
         cancelStage.setScene(cancelScene);
         cancelStage.show();
     }
+
+    public void signupButtonOnAction(ActionEvent event) {
+        signupMessageLabel.setText("trying to Sign up");
+        if (enterUsernameField.getText().isBlank() ||
+                enterPasswordField.getText().isBlank()) {
+
+            signupMessageLabel.setText("Please fill all text fields");
+        }
 }
