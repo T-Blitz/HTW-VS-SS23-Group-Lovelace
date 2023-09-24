@@ -10,7 +10,7 @@ public class Server {
     private void start(String[] args) {
         //localhost
         //Datenbank Verbindung
-        //Start Server.Server Server.RMI
+        //Start Server RMI
 
     }
 }
